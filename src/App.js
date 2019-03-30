@@ -8,7 +8,6 @@ import {listNotes} from "./graphql/queries";
 import "./App.css";
 
 
-
 class App extends Component {
 
   state = {
@@ -91,9 +90,6 @@ class App extends Component {
       // add item
       const input = {note};
       await API.graphql(graphqlOperation(createNote, {input} ));
-      //const newNote = result.data.createNote;
-      //console.log("new note", newNote);
-      //this.setState({notes: [newNote, ...notes], note:""});
       this.setState({note: ""});
 
     }
@@ -103,14 +99,6 @@ class App extends Component {
     const {id, note} = this.state;
     const input = {id, note };
     await API.graphql(graphqlOperation(updateNote, {input}));
-    // console.log("update", result);
-    // const updatedNote = result.data.updateNote;
-    // const index = notes.findIndex((note)=> note.id === updatedNote.id);
-    // const updatedNotes = [
-    //     ...notes.slice(0, index),
-    //     updatedNote,
-    //     ...notes.slice(index + 1)
-    // ];
     this.setState({note:"", id:""})
 
   };
@@ -118,10 +106,6 @@ class App extends Component {
   handleDelete = async (noteId)=>{
     const input = {id: noteId}; // very careful, input should be map format, not string
     await API.graphql(graphqlOperation(deleteNote,{input}));
-    //console.log('deleted', result);
-    // const deletedNoteId = result.data.deleteNote.id;
-    // const newNotes = notes.filter((item)=> item.id !== deletedNoteId);
-    // this.setState({notes: newNotes});
   };
 
   handleSetItem = ({id, note}) =>{

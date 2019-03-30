@@ -8,7 +8,6 @@ import {listNotes} from "./graphql/queries";
 import "./App.css";
 
 
-
 const App = () => {
 
     const [id, setId] = useState("");
@@ -21,10 +20,6 @@ const App = () => {
         const createNoteListener = API.graphql(graphqlOperation(onCreateNote)).subscribe({
             next: newData => {
                 const newNote = newData.value.data.onCreateNote;
-                // const prevNotes = notes.filter((note)=> note.id !== newNote.id);
-                // const updatedNotes = [...prevNotes, newNote];
-                // setNotes((prevNotes)=>[newNote, ...prevNotes]);
-
                 setNotes(prevNotes => {
                     const oldNotes = prevNotes.filter(item => item.id !== newNote.id);
                     const updatedNotes = [...oldNotes, newNote];
@@ -51,12 +46,6 @@ const App = () => {
                 next: updateData => {
                     console.log(updateData.value.data.onUpdateNote);
                     const updatedNote = updateData.value.data.onUpdateNote
-                    // const index = notes.findIndex((note)=> note.id === updatedNote.id);
-                    // const updatedNotes = [
-                    //     ...notes.slice(0, index),
-                    //     updatedNote,
-                    //     ...notes.slice(index + 1)
-                    // ];
                     setNotes(prevNotes =>{
                         const index = prevNotes.findIndex(item => item.id === updatedNote.id);
                         const updatedNotes = [...prevNotes.slice(0,index), updatedNote, ...prevNotes.slice(index+1)];
