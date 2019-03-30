@@ -118,8 +118,8 @@ const App = () => {
     return (
         <div className={"header"}>
             <Header as={"h1"} block textAlign={'center'}>Simple Note App</Header>
-            <Header as={"h4"} textAlign={'center'}>Add notes, query by GraphQL, multi-user, on-subscription update</Header>
-            <Header as={"h4"} textAlign={'center'}>Open multiple browsers with the same URL to see how it works.</Header>
+            <Header as={"h3"} textAlign={'center'}>** Add notes, query by GraphQL, multi-user, on-subscription update</Header>
+            <Header as={"h3"} textAlign={'center'}>** Open multiple browsers with the same URL to see how it works.</Header>
             <Form onSubmit={handleAddUpdateSubmit}>
                 <Form.Field
                     control={TextArea}
@@ -133,6 +133,8 @@ const App = () => {
             </Form>
 
             <List size={"huge"}>
+                <List.Content>Content (Click the item to edit) </List.Content>
+                <hr/>
                 {notes.map((item)=>
                     <List.Item key={item.id}>
                         <List.Content floated='right'>
@@ -148,6 +150,7 @@ const App = () => {
                     </List.Item>
 
                 )}
+
             </List>
 
         </div>)

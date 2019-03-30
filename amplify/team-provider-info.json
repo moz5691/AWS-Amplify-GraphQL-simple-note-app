@@ -1,18 +1,18 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplifynotetake-20190328162127-authRole",
-            "UnauthRoleArn": "arn:aws:iam::031173249615:role/amplifynotetake-20190328162127-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::031173249615:role/amplifynotetake-20190328162127-authRole",
+            "AuthRoleName": "amplifynotetake-20190330105037-authRole",
+            "UnauthRoleArn": "arn:aws:iam::031173249615:role/amplifynotetake-20190330105037-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::031173249615:role/amplifynotetake-20190330105037-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "amplifynotetake-20190328162127-deployment",
-            "UnauthRoleName": "amplifynotetake-20190328162127-unauthRole",
-            "StackName": "amplifynotetake-20190328162127",
-            "StackId": "arn:aws:cloudformation:us-east-1:031173249615:stack/amplifynotetake-20190328162127/112af410-5197-11e9-93d5-12989ba5c57e"
+            "DeploymentBucketName": "amplifynotetake-20190330105037-deployment",
+            "UnauthRoleName": "amplifynotetake-20190330105037-unauthRole",
+            "StackName": "amplifynotetake-20190330105037",
+            "StackId": "arn:aws:cloudformation:us-east-1:031173249615:stack/amplifynotetake-20190330105037/2e0f62e0-52fb-11e9-bdf6-0e162d0e1748"
         },
         "categories": {
             "auth": {
-                "cognito76898896": {}
+                "cognito9a539375": {}
             }
         }
     }
